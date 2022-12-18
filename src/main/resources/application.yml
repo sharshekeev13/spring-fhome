@@ -1,0 +1,49 @@
+#spring.datasource.url=jdbc:postgresql://localhost/fhome_test
+#spring.datasource.username=postgres
+#spring.datasource.password=123
+#spring.datasource.driverClassName=org.postgresql.Driver
+#spring.jpa.show-sql=true
+#springdoc.api-docs.path=/api-docs
+#spring.jpa.hibernate.ddl-auto=create-drop
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/fhome_test
+    username: postgres
+    password: 123
+    driverClassName: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: dastan.sharshekeev13@gmail.com
+    password: ctwqmswqkawyvfjo
+    properties:
+      mail:
+        smtp:
+          starttls:
+            required: true
+            enable: true
+          auth: true
+          ssl:
+            trust: smtp.gmail.com
+app:
+  jwt:
+    secret: 7AKsf8T2Zzs2CaKVUDjFEFGu5ilGjzCtglgKfeRNuet4HVHw38Eq4nUwsivyi2dHQPMYgZDYVbIwklAUz9W9Nj1KN1SqvU6Td2PgpF50plPs2OK1ZCPjJjbBig3rVgCEa9QSYTLjDPpvve021ifzadblzk7QSXaFpybId5RYq73BUF6KBNknwMbkbHaFwxs9L298Xqhe
+    expiration: 76300000
+
+####### Email Properties ######
+#spring.mail.host = smtp.gmail.com
+#spring.mail.port = 587
+#spring.mail.properties.mail.smtp.starttls.enable = true
+#spring.mail.username = dastan.sharshekeev13@gmail.com
+#spring.mail.password = ctwqmswqkawyvfjo
+#spring.mail.properties.mail.smtp.starttls.required = true
+#spring.mail.properties.mail.smtp.auth = true
+#spring.mail.properties.mail.smtp.ssl.trust = smtp.gmail.com
+
+##### SECURITY #####
+
