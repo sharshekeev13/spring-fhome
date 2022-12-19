@@ -1,6 +1,7 @@
 package kg.fhome.test.controllers;
 
 
+import ch.qos.logback.core.model.Model;
 import jakarta.validation.Valid;
 import kg.fhome.test.dto.MessageDTO;
 import kg.fhome.test.dto.auth.JwtDTO;
@@ -21,9 +22,12 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.IOException;
 
@@ -90,10 +94,10 @@ public class AuthController {
     }
 
     @GetMapping("/confirm-account")
-    public ResponseStatusException confirmUserAccount(@RequestParam("token")String confirmationToken){
+    public RedirectView confirmUserAccount(@RequestParam("token")String confirmationToken, ModelMap model){
         System.out.println(confirmationToken);
-        return new ResponseStatusException(authService.confirmUserAccount(confirmationToken));
+        authService.confirmUserAccount(confirmationToken);
+        return new RedirectView("http://localhost:8080/index.html");
     }
-
 
 }

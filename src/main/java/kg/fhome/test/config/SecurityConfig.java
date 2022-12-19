@@ -38,7 +38,7 @@ public class SecurityConfig {
         security.exceptionHandling().authenticationEntryPoint(unauthorizedHandler);
         security.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         security.authorizeRequests()
-                .requestMatchers("/auth/**","/swagger-ui.html","/v3/**","/swagger-ui/**")
+                .requestMatchers("/auth/**","/swagger-ui.html","/v3/**","/swagger-ui/**", "/downloadFile/**","/index.html")
                 .permitAll().anyRequest().authenticated();
         security.addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         return security.build();
