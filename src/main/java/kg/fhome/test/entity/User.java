@@ -19,24 +19,15 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
     private String emailId;
-    @NotBlank
     private boolean business;
     private String photo;
-    @NotBlank
     private String password;
-    @NotBlank
     private String firstName;
-    @NotBlank
     private String secondName;
-    @NotBlank
     private int age;
-    @NotBlank
     private String role;
-    @NotBlank
     private String phoneNumber;
-    @NotBlank
     private String userInfo;
     private boolean isEnabled;
 }
